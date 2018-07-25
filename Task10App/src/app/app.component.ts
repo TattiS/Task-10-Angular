@@ -11,7 +11,15 @@ import { RouterModule } from '@angular/router';
 })
 export class AppComponent {
   title = 'Airport';
-
-
+  _msg = "";
+ 
+ public get Message() : string {
+   return this._msg
+ }
+  
+  public set Message(v : string) {
+    this._msg = v;
+  }
+  
 }
 

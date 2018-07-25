@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PilotsService } from './shared/pilots.service';
 import { Pilot } from './shared/pilot';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-pilots',
@@ -13,9 +14,11 @@ export class PilotsComponent implements OnInit {
 
   ngOnInit() {
     this.pilotsService.getPilots()
-      .subscribe((data: Pilot[]) => this.pilots = data);
+      .subscribe(data => this.pilots = data);
   }
-
+  showDetails(pilot){
+   
+  }
   deletePilot(pilot) {
     if (confirm("Are you sure you want to delete " + pilot.name + "?")) {
       let index = this.pilots.indexOf(pilot);
