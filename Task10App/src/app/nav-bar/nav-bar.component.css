@@ -1,0 +1,45 @@
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ nav {
+  display: block;
+  float: right;
+  margin: 10px 0 0 0;
+  padding: 20px 0;
+  color: #C0BAB6;
+  background-color: #232323;
+}
+
+ nav ul {
+    padding: 0 20px;
+  }
+
+ nav li {
+    display: inline;
+    margin-right: 25px;
+    text-transform: uppercase;
+  }
+
+ nav li.last {
+      margin-right: 0;
+    }
+
+  nav li a {
+      color: #C0BAB6;
+      background-color: #232323;
+    }
+
+  nav li a:hover {
+        color: #FF9900;
+        background-color: #232323;
+      }
+
+ nav {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
