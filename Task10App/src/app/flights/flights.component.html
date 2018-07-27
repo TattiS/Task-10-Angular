@@ -1,0 +1,47 @@
+<h3>
+  Flights
+</h3>
+<table>
+  <thead>
+    <tr>
+      <th data-field="name">Id</th>
+      <th data-field="name">Departure Point</th>
+      <th data-field="name">Departure Time</th>
+      <th data-field="name">Arrival Time</th>
+      <th data-field="name">Destination</th>
+      <th data-field="name">Tickets</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let flight of flights">
+      <td>{{ flight?.id }}</td>
+      <td>{{ flight?.departurePoint }}</td>
+      <td><p>{{ flight?.departureTime | date:"MM/dd/yy" }}<br/>
+      {{ flight?.departureTime | date:'shortTime'}}</p></td>
+      <td><p>{{ flight?.arrivalTime | date:"MM/dd/yy" }}<br/>
+        {{ flight?.arrivalTime | date:'shortTime'}}</p></td>
+      <td>{{ flight?.destination }}</td>
+      <td>
+        <tr *ngFor="let ticket of tickets">
+          <td><p><strong>Id: </strong>{{ticket?.id}} </p>
+            <p><strong>Price: </strong>{{ticket?.price| currency:"USD":true}} </p>
+            <p><strong>Flight Id: </strong>{{ticket?.flightId}} </p></td>
+        </tr>
+      </td>
+      
+      <td>
+        <a  class="button-sm" routerLink="/flights/details/{{flight?.id}}" routerLinkActive="active">Details</a>
+       </td>
+      <td>
+        <a  class="button-sm" routerLink="/flights/{{flight?.id}}" routerLinkActive="active">Update</a>
+      </td>
+      <td>
+        <a  class="button-sm" (click)="deleteFlight(flight.id)" >Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<a class="button" routerLink="/flights/new">Add flight</a>

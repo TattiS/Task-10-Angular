@@ -26,6 +26,7 @@ export class PilotFormComponent implements OnInit {
     private pilotsService: PilotsService
   ) {
     this.form = formBuilder.group({
+      id:[],
       name: [' ', [Validators.required, Validators.maxLength(50)]],
       surname: [' ', [Validators.required, Validators.maxLength(50)]],
       birthdate: [],
@@ -48,13 +49,14 @@ export class PilotFormComponent implements OnInit {
               (data: Pilot) => this.pilot = data,
             response => {
               if (response.status == 404) {
-                this.router.navigate(['Not Found']);
+                this.router.navigate(['pilots']);
               }
             }
             );
         }
-      
+     
     );
+   
   }
 
   save() {

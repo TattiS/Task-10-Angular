@@ -1,0 +1,27 @@
+<h3>{{title}}</h3>
+<div class="form-style-8">
+  <form [formGroup]="form" (ngSubmit)="save()">
+          <label for="id"
+          [class.active]="ticket.id">Id</label>
+         <input id="id" type="text" 
+           formControlName="id"
+           [class.invalid]="form.controls['id'].touched && !form.controls['id'].valid" />
+
+          <label for="price"
+          [class.active]="ticket.price"
+          data-error="Price is required.">Price</label>
+        <input id="price" type="text" class="validate"
+               formControlName="price"
+               [class.invalid]="form.controls['price'].touched && !form.controls['price'].valid" />
+    
+          <label for="flightId"
+          [class.active]="ticket.flightId"
+          data-error="Flight Id is required">Flight Id</label>
+        <input id="flightId" type="text" class="validate"
+               formControlName="flightId"
+               [class.invalid]="form.controls['flightId'].touched && !form.controls['flightId'].valid" />
+    <button class="button" type="submit"
+            [disabled]="!form.valid">Submit</button>
+    
+  </form>
+</div>

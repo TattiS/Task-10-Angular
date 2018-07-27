@@ -1,0 +1,23 @@
+
+
+.details {
+    min-height: 355px;
+    display: inline-block;
+}
+.details h2{
+    text-decoration:underline;
+}
+.details .button {
+    display: inline-block;
+    line-height: 3em;
+    padding: 0 1em;
+    background: #34343E;
+    border-radius: 0.135em;
+    background-clip: padding-box;
+    color:#919191;
+    text-decoration: none;
+    margin-right: 1em;
+    margin-top: 1em;
+    cursor: pointer;
+    border-color: #919191 !important
+  }

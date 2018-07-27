@@ -1,53 +1,45 @@
 <h3>{{title}}</h3>
-<div class="row">
-  <form class="col s12" [formGroup]="form" (ngSubmit)="save()">
-    <div class="row">
-      <div class="input-field col s12">
-        <i class="material-icons prefix">account_circle</i>
+<div class="form-style-8">
+  <form [formGroup]="form" (ngSubmit)="save()">
+          <label for="id"
+          [class.active]="pilot.id">Id</label>
+         <input id="id" type="text" 
+           formControlName="id" />
+
+            <label for="name"
+          [class.active]="pilot.name"
+          data-error="Name is required and needs to be not longer than 50 chars">Name</label>
         <input id="name" type="text" class="validate"
-               [(ngModel)]="pilot.name" formControlName="name"
+               formControlName="name"
                [class.invalid]="form.controls['name'].touched && !form.controls['name'].valid" />
-        <label for="name"
-               [class.active]="user.name"
-               data-error="Name is required and needs to be not longer than 50 chars">Name</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <i class="material-icons prefix">account_circle</i>
+    
+          <label for="surname"
+          [class.active]="pilot.surname"
+          data-error="Surname is required and needs to be not longer than 50 chars">Surname</label>
         <input id="surname" type="text" class="validate"
-               [(ngModel)]="pilot.surname" formControlName="surname"
+               formControlName="surname"
                [class.invalid]="form.controls['surname'].touched && !form.controls['surname'].valid" />
-        <label for="surname"
-               [class.active]="user.surname"
-               data-error="Surname is required and needs to be not longer than 50 chars">Surname</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <i class="material-icons prefix">account_circle</i>
-        <input id="birthdate" type="date" class="validate"
-               [(ngModel)]="pilot.bithdate" formControlName="birthdate"
-               [class.invalid]="form.controls['birthdate'].touched && !form.controls['birthdate'].valid" />
+        
+      
         <label for="birthdate"
-               [class.active]="user.birthdate"
-               data-error="Birthdate is required and needs to be earlier than today">Surname</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <i class="material-icons prefix">account_circle</i>
-        <input id="experience" type="number" class="validate"
-               [(ngModel)]="pilot.experience" formControlName="experience"
-               [class.invalid]="form.controls['experience'].touched && !form.controls['experience'].valid" />
+               [class.active]="pilot.birthdate"
+               data-error="Birthdate is required and needs to be earlier than today">Birthdate</label>
+        <input id="birthdate" type="date" class="validate"
+               formControlName="birthdate"
+               [class.invalid]="form.controls['birthdate'].touched && !form.controls['birthdate'].valid" />
+        
+     
         <label for="experience"
-               [class.active]="user.experience"
+               [class.active]="pilot.experience"
                data-error="Experience is required">Experience</label>
-      </div>
-    </div>
-    <button class="btn waves-effect waves-light" type="submit"
+        <input id="experience" type="number" class="validate"
+               formControlName="experience"
+               [class.invalid]="form.controls['experience'].touched && !form.controls['experience'].valid" />
+     
+    <button class="button" type="submit"
             [disabled]="!form.valid">
-      Submit<i class="material-icons right">send</i>
+      Submit
     </button>
+    
   </form>
 </div>

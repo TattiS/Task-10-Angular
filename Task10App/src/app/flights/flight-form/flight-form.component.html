@@ -1,0 +1,73 @@
+<h3>{{title}}</h3>
+<div class="form-style-8">
+  <form [formGroup]="form" (ngSubmit)="save()">
+          <label for="id"
+          [class.active]="flight.id">Id</label>
+         <input id="id" type="text" 
+           formControlName="id" />
+
+            <label for="departurePoint"
+          [class.active]="flight.departurePoint"
+          data-error="Departure point is required">Departure Point</label>
+        <input id="departurePoint" type="text" class="validate"
+               formControlName="departurePoint"
+               [class.invalid]="form.controls['departurePoint'].touched && !form.controls['departurePoint'].valid" />
+    
+          <label for="destination"
+          [class.active]="flight.destination"
+          data-error="Destination is required">Destination</label>
+        <input id="destination" type="text" class="validate"
+               formControlName="destination"
+               [class.invalid]="form.controls['destination'].touched && !form.controls['destination'].valid" />
+              
+        <label for="departureTime"
+               [class.active]="flight.departureTime"
+               data-error="Departure time is required">Departure time</label>
+        <input id="departureTime" type="datetime-local" class="validate"
+               formControlName="departureTime"
+               [class.invalid]="form.controls['departureTime'].touched && !form.controls['departureTime'].valid" />
+        
+        <label for="arrivalTime"
+               [class.active]="flight.arrivalTime"
+               data-error="Arrival time is required">Arrival time</label>
+        <input id="arrivalTime" type="datetime-local" class="validate"
+               formControlName="arrivalTime"
+               [class.invalid]="form.controls['arrivalTime'].touched && !form.controls['arrivalTime'].valid" />
+        
+               <form [formGroup]="tickets" >
+                <form [formGroup]="ticket" >
+                <!-- <label for="id"
+                [class.active]="flight.typeOfPlane.id">Id</label>
+               <input id="id" type="text" 
+                 formControlName="id" />
+      
+                  <label for="model"
+                [class.active]="plane.typeOfPlane.model"
+                data-error="Model is required">Model</label>
+              <input id="model" type="text" class="validate"
+                     formControlName="model"
+                     [class.invalid]="typeOfPlane.controls['model'].touched && !typeOfPlane.controls['model'].valid" />
+          
+                <label for="seats"
+                [class.active]="plane.typeOfPlane.seats"
+                data-error="Seats is required">Seats</label>
+              <input id="seats" type="text" class="validate"
+                     formControlName="seats"
+                     [class.invalid]="typeOfPlane.controls['seats'].touched && !typeOfPlane.controls['seats'].valid" />
+                   
+                <label for="airlift"
+                     [class.active]="plane.typeOfPlane.seats"
+                     data-error="Airlift is required">Airlift</label>
+                   <input id="airlift" type="text" class="validate"
+                          formControlName="airlift"
+                          [class.invalid]="typeOfPlane.controls['airlift'].touched && !typeOfPlane.controls['airlift'].valid" />
+                    -->
+                    </form>
+                  </form>      
+    <button class="button" type="submit"
+            [disabled]="!form.valid">
+      Submit
+    </button>
+    
+  </form>
+</div>

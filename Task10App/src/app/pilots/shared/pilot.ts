@@ -2,6 +2,6 @@ export class Pilot {
   id: number;
   name: string;
   surname: string;
-  birthdate: number;
+  birthdate: Date;
   experience: number;
 }

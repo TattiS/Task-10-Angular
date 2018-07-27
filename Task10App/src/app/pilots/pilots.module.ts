@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { PilotsComponent } from './pilots.component';
 import { PilotsService } from './shared/pilots.service';
 import { PilotFormComponent } from './pilot-form/pilot-form.component';
+import { PilotDetailsComponent } from './pilot-details/pilot-details.component';
 
 @NgModule({
   imports: [
@@ -17,10 +18,13 @@ import { PilotFormComponent } from './pilot-form/pilot-form.component';
   ],
   declarations: [
     PilotsComponent,
-    PilotFormComponent
+    PilotFormComponent,
+    PilotDetailsComponent
   ],
   exports: [
-    PilotsComponent
+    PilotsComponent,
+    PilotFormComponent,
+    PilotDetailsComponent
   ],
   providers: [
     PilotsService

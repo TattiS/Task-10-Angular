@@ -1,0 +1,35 @@
+<h3>{{title}}</h3>
+<div class="form-style-8">
+  <form [formGroup]="form" (ngSubmit)="save()">
+          <label for="id"
+          [class.active]="type.id">Id</label>
+         <input id="id" type="text" 
+           formControlName="id"
+           [class.invalid]="form.controls['id'].touched && !form.controls['id'].valid" />
+
+          <label for="model"
+          [class.active]="type.model"
+          data-error="Model is required.">Model</label>
+        <input id="model" type="text" class="validate"
+               formControlName="model"
+               [class.invalid]="form.controls['model'].touched && !form.controls['model'].valid" />
+    
+          <label for="seats"
+          [class.active]="type.seats"
+          data-error="Seats is required and must be greater than 0">Seats</label>
+        <input id="seats" type="text" class="validate"
+               formControlName="seats"
+               [class.invalid]="form.controls['seats'].touched && !form.controls['seats'].valid" />
+    
+          <label for="airlift"
+          [class.active]="type.airlift"
+          data-error="Airlift is required and must be greater than 0">Airlift</label>
+        <input id="airlift" type="text" class="validate"
+              formControlName="airlift"
+              [class.invalid]="form.controls['airlift'].touched && !form.controls['airlift'].valid" />
+    
+    <button class="button" type="submit"
+            [disabled]="!form.valid">Submit</button>
+    
+  </form>
+</div>

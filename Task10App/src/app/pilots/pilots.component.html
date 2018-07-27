@@ -1,6 +1,6 @@
-<p>
-  Displaying {{pilots.lenth}} pilots.
-</p>
+<h3>
+  Pilots
+</h3>
 <table>
   <thead>
     <tr>
@@ -19,30 +19,20 @@
       <td>{{ pilot?.id }}</td>
       <td>{{ pilot?.name }}</td>
       <td>{{ pilot?.surname }}</td>
-      <td>{{ pilot?.birthdate }}</td>
+      <td>{{ pilot?.birthdate | date:"MM/dd/yy" }}</td>
       <td>{{ pilot?.experience }}</td>
       <td>
-          <a (click)= "showDetails(pilot)" href="">
-            <i class="material-icons">Details</i>
-          </a>
+          <a  class="button-sm" routerLink="/pilots/details/{{pilot?.id}}" routerLinkActive="active">Details</a>
         </td>
       <td>
-        <a href="pilots/pilot.id">
-          <i class="material-icons">Update</i>
-        </a>
+        <a  class="button-sm" href="pilots/pilot.id">Update</a>
       </td>
       <td>
-        <a (click)="deletePilot(pilot)" href="">
-          <i class="material-icons">Delete</i>
-        </a>
+        <a  class="button-sm" (click)="deletePilot(pilot)" >Delete</a>
       </td>
     </tr>
   </tbody>
 </table>
 
-<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-  <a class="btn-floating btn-large waves-effect waves-light green"
-     routerLink="/pilots/new">
-    <i class="material-icons">add</i>
-  </a>
-</div>
+
+<a class="button" routerLink="/pilots/new">Add pilot</a>

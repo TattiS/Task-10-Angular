@@ -65,10 +65,22 @@ input, textarea, select {
   clear: both;
 }
 
-html[xmlns] .clear {
-  display: block;
-}
 
 * html .clear {
   height: 1%;
+}
+th{
+  text-align: center;
+}
+th, td {
+  padding-left: 1em;
+}
+label{
+  display: block;
+}
+input {
+  margin-left: 0.5em;
+}
+button{
+  margin-top: 1em;
 }

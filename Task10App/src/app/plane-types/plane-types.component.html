@@ -1,0 +1,33 @@
+<h3>
+  Plane types
+</h3>
+<table>
+  <thead>
+    <tr>
+      <th data-field="name">Id</th>
+      <th data-field="name">Model</th>
+      <th data-field="name">Seats</th>
+      <th data-field="name">Airlift</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let type of types">
+      <td>{{ type?.id }}</td>
+      <td>{{ type?.model }}</td>
+      <td>{{ type?.seats }}</td>
+      <td>{{ type?.airlift }}</td>
+      <td>
+        <a class="button-sm" routerLink="/types/details/{{type?.id}}" routerLinkActive="active">Details</a>
+      </td>
+      <td>
+        <a class="button-sm" routerLink="/types/{{type?.id}}" routerLinkActive="active">Update</a>
+      </td>
+      <td>
+        <a class="button-sm" (click)="deleteType(type)">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<a class="button" routerLink="/types/new">Add type</a>
