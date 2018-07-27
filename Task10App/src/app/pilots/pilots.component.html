@@ -25,7 +25,7 @@
           <a  class="button-sm" routerLink="/pilots/details/{{pilot?.id}}" routerLinkActive="active">Details</a>
         </td>
       <td>
-        <a  class="button-sm" href="pilots/pilot.id">Update</a>
+        <a  class="button-sm" routerLink="/pilots/{{pilot?.id}}" routerLinkActive="active">Update</a>
       </td>
       <td>
         <a  class="button-sm" (click)="deletePilot(pilot)" >Delete</a>

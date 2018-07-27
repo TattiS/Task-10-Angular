@@ -1,3 +1,38 @@
-<p>
-  crews works!
-</p>
+<h3>
+  Crews
+</h3>
+<table>
+  <thead>
+    <tr>
+      <th data-field="name">Id</th>
+      <th data-field="name">Pilot Id</th>
+      <th data-field="name">Stewardesses</th>
+            
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let crew of crews">
+        <td>{{ crew?.id }}</td>
+        <td>{{ crew?.pilotId }}</td>
+        <td><tr *ngFor="let stewardess of crew.stewardesses">
+      <td>{{ stewardess?.id }}</td>
+      <td>{{ stewardess?.surname }}</td>
+     
+    </tr></td>
+      <td>
+          <a  class="button-sm" routerLink="/crews/details/{{crew?.id}}" routerLinkActive="active">Details</a>
+        </td>
+      <td>
+        <a  class="button-sm" routerLink="/crews/{{crew?.id}}" routerLinkActive="active">Update</a>
+      </td>
+      <td>
+        <a  class="button-sm" (click)="deleteCrew(crew)" >Delete</a>
+      </td>
+    
+  </tr>
+  <tr></tr>
+  </tbody>
+</table>
+
+
+<a class="button" routerLink="/crews/new">Add crew</a>

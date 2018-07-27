@@ -1,3 +1,10 @@
-<p>
-  stewardess-details works!
-</p>
+<div class="details">
+  <div>
+      <h2>Stewardess: {{stewardess?.name}} {{stewardess?.surname}}</h2>
+      <p><strong>Id: </strong>{{stewardess?.id}}</p>
+      <p><strong>Birhtdate: </strong>{{stewardess?.birthdate| date:"MM/dd/yy" }} </p>
+      <p><strong>Crew Id: </strong>{{stewardess?.crewId}} </p>
+      
+  </div>   
+  <a class="button" (click)="gotoStewardesses()">Go back to list</a>
+</div>

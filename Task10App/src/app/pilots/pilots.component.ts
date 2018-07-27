@@ -19,13 +19,9 @@ export class PilotsComponent implements OnInit {
     this.pilotsService.getPilots().subscribe((data:Pilot[]) =>{ this.pilots = data});
     
   }
-  
-  public get Length() : number {
-    return this.pilots.length;
-  }
-  
+ 
   deletePilot(pilot) {
-    if (confirm("Are you sure you want to delete " + pilot.name+ " with id "+ pilot.id + "?")) {
+    if (confirm("Are you sure you want to delete pilot with id "+ pilot.id + "?")) {
      
       this.pilotsService.deletePilot(pilot.id)
         .subscribe(null,

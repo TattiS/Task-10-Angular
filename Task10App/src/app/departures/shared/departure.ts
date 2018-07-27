@@ -1,4 +1,3 @@
-
 import { Crew } from "../../crews/shared/crew";
 import { Plane } from "../../planes/shared/plane";
 

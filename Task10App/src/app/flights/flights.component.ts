@@ -28,4 +28,4 @@ export class FlightsComponent implements OnInit {
       )
     }
   }
-}
+} 

@@ -1,3 +1,27 @@
-<p>
-  crew-form works!
-</p>
+<h3>{{title}}</h3>
+<div class="form-style-8">
+  <form [formGroup]="form" (ngSubmit)="save()">
+          <label for="id"
+          [class.active]="crew.id">Id</label>
+         <input id="id" type="text" 
+           formControlName="id"
+           [class.invalid]="form.controls['id'].touched && !form.controls['id'].valid" />
+
+          <label for="pilotId"
+          [class.active]="crew.pilotId"
+          data-error="Pilot id is required.">Pilot Id</label>
+        <input id="pilotId" type="text" class="validate"
+               formControlName="pilotId"
+               [class.invalid]="form.controls['pilotId'].touched && !form.controls['pilotId'].valid" />
+    
+          <label for="stewardesses"
+          [class.active]="crew.stewardesses"
+          data-error="Stewardesses is required">Stewardesses</label>
+        <input id="stewardesses" type="text" class="validate"
+               formControlName="stewardesses"
+               [class.invalid]="form.controls['stewardesses'].touched && !form.controls['stewardesses'].valid" />
+    <button class="button" type="submit"
+            [disabled]="!form.valid">Submit</button>
+    
+  </form>
+</div>

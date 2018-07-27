@@ -29,8 +29,8 @@ export class PilotFormComponent implements OnInit {
       id:[],
       name: [' ', [Validators.required, Validators.maxLength(50)]],
       surname: [' ', [Validators.required, Validators.maxLength(50)]],
-      birthdate: [],
-      experience:[]
+      birthdate: [' '],
+      experience:[' ']
     });
   }
 

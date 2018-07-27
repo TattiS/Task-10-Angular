@@ -1,3 +1,17 @@
-<p>
-  crew-details works!
-</p>
+<div class="details">
+    <div>
+        <h2>Crew</h2>
+        <p><strong>Id: </strong>{{crew?.id}} </p>
+        <p><strong>Pilot Id: </strong>{{crew?.pilotId}} </p>
+        <h3><strong>Stewardesses: </strong></h3>
+        <dl *ngFor="let stewardess of crew?.stewardesses">
+                <dt><h4>{{stewardess?.name}} {{stewardess?.surname}}</h4></dt>
+                <p><strong>Id: </strong>{{stewardess?.id}}</p>
+                <p><strong>Birhtdate: </strong>{{stewardess?.birthdate| date:"MM/dd/yy" }} </p>
+                <p><strong>Crew Id: </strong>{{stewardess?.crewId}} </p>
+        </dl>
+        
+        
+    </div>   
+    <a class="button" (click)="gotoCrews()">Go back to list</a>
+</div>

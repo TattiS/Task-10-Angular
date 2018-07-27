@@ -11,7 +11,7 @@ import { switchMap } from 'rxjs/internal/operators/switchMap';
 })
 
 export class PilotDetailsComponent implements OnInit {
-  private pilot:Pilot;
+  private pilot:Pilot = new Pilot();
   constructor(private route: ActivatedRoute, private router: Router, private pilotsService: PilotsService) { }
 
   ngOnInit() {
