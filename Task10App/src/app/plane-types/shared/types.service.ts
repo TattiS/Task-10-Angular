@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -18,11 +18,11 @@ getType(id) {
 }
 
 addType(type) {
-  return this.http.post(this.url, JSON.stringify(type));
+  return this.http.post(this.url, JSON.stringify(type),httpOptions);
 }
 
 updateType(type) {
-  return this.http.put(this.getUrlWithId(type.id), JSON.stringify(type));
+  return this.http.put(this.getUrlWithId(type.id), JSON.stringify(type),httpOptions);
 }
 
 deleteType(id) {
@@ -33,3 +33,8 @@ private getUrlWithId(id:number) {
   return this.url + "/" + id;
 }
 }
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json'
+  })
+};

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -18,11 +18,11 @@ getPlane(id) {
 }
 
 addPlane(plane) {
-  return this.http.post(this.url, JSON.stringify(plane));
+  return this.http.post(this.url, JSON.stringify(plane),httpOptions);
 }
 
 updatePlane(plane) {
-  return this.http.put(this.getUrlWithId(plane.id), JSON.stringify(plane));
+  return this.http.put(this.getUrlWithId(plane.id), JSON.stringify(plane),httpOptions);
 }
 
 deletePlane(id) {
@@ -33,3 +33,8 @@ private getUrlWithId(id:number) {
   return this.url + "/" + id;
 }
 }
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json'
+  })
+};
