@@ -1,0 +1,38 @@
+<h3>
+  Pilots
+</h3>
+<table>
+  <thead>
+    <tr>
+      <th data-field="name">Id</th>
+      <th data-field="name">Name</th>
+      <th data-field="name">Surname</th>
+      <th data-field="name">BirthDate</th>
+      <th data-field="name">Experience</th>
+      <th data-field="name">Details</th>
+      <th data-field="name">Update</th>
+      <th data-field="name">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pilot of pilots">
+      <td>{{ pilot?.id }}</td>
+      <td>{{ pilot?.name }}</td>
+      <td>{{ pilot?.surname }}</td>
+      <td>{{ pilot?.birthdate | date:"MM/dd/yy" }}</td>
+      <td>{{ pilot?.experience }}</td>
+      <td>
+          <a  class="button-sm" routerLink="/pilots/details/{{pilot?.id}}" routerLinkActive="active">Details</a>
+        </td>
+      <td>
+        <a  class="button-sm" routerLink="/pilots/{{pilot?.id}}" routerLinkActive="active">Update</a>
+      </td>
+      <td>
+        <a  class="button-sm" (click)="deletePilot(pilot)" >Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<a class="button" routerLink="/pilots/new">Add pilot</a>

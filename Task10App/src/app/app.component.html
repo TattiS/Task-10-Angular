@@ -1,0 +1,25 @@
+
+<header id="header" class="clear">
+  <div id="hgroup">
+    <h1><a href="#">{{ title }}</a></h1>
+    <h2>Welcome to our service!</h2>
+  </div>
+  <app-nav-bar></app-nav-bar>
+</header>
+<div class="wrapper row2">
+  <div id="container" class="clear">
+    <div id="homepage">
+      <router-outlet></router-outlet>
+      <div>
+        <p style="text-overflow:ellipsis;">{{Message}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="wrapper row3">
+  <footer id="footer" class="clear">
+    <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="#">Tanya</a></p>
+    <p class="fl_right">Made for BSA 2018 - Task 10</p>
+  </footer>
+</div>
+

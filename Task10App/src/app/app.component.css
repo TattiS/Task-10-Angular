@@ -1,0 +1,91 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+footer, header {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+#header, #container, #footer {
+  display: block;
+  width: 960px;
+  margin: 0 auto;
+}
+
+#header {
+  padding: 20px 0;
+}
+
+  #header #hgroup {
+    float: left;
+    margin: 0 0 20px 0;
+  }
+
+    #header #hgroup h1, #header #hgroup h2 {
+      font-weight: normal;
+      text-transform: none;
+    }
+
+    #header #hgroup h1 {
+      font-size: 36px;
+    }
+
+    #header #hgroup h2 {
+      font-size: 13px;
+    }
+
+#footer {
+  margin-bottom: 0;
+  padding: 20px 0;
+  
+}
+
+  #footer p {
+    margin: 0;
+    padding: 0;
+  }
+
+
+div.wrapper {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.row1, .row1 a {
+  color: #C0BAB6;
+  background-color: #333333;
+}
+
+.row2 {
+  color: #979797;
+  background-color: #FFFFFF;
+}
+
+  .row2 a {
+    color: #FF9900;
+    background-color: #FFFFFF;
+  }
+
+  
+.row3, .row3 a {
+  color: #919191;
+  background-color: #232323;
+}
+
+.fl_left {
+  float: left;
+}
+
+.fl_right {
+  float: right;
+}
+
+#container #homepage {
+  display: block;
+  width: 100%;
+  line-height: 1.6em;
+  /* min-height: calc(100% - 80px); */
+}

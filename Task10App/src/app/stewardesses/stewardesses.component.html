@@ -1,0 +1,36 @@
+<h3>
+  Stewardesses
+</h3>
+<table>
+  <thead>
+    <tr>
+      <th data-field="name">Id</th>
+      <th data-field="name">Name</th>
+      <th data-field="name">Surname</th>
+      <th data-field="name">BirthDate</th>
+      <th data-field="name">Crew Id</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let stewardess of stewardesses">
+      <td>{{ stewardess?.id }}</td>
+      <td>{{ stewardess?.name }}</td>
+      <td>{{ stewardess?.surname }}</td>
+      <td>{{ stewardess?.birthdate | date:"MM/dd/yy" }}</td>
+      <td>{{ stewardess?.crewId }}</td>
+      <td>
+          <a  class="button-sm" routerLink="/stewardesses/details/{{stewardess?.id}}" routerLinkActive="active">Details</a>
+        </td>
+      <td>
+        <a  class="button-sm" routerLink="/stewardesses/{{stewardess?.id}}" routerLinkActive="active">Update</a>
+      </td>
+      <td>
+        <a  class="button-sm" (click)="deleteStewardess(stewardess)" >Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<a class="button" routerLink="/stewardesses/new">Add stewardess</a>

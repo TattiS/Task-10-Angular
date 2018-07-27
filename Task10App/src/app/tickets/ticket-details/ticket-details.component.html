@@ -1,0 +1,11 @@
+
+    <div class="details">
+        <div>
+          <h2>Ticket</h2>
+          <p><strong>Id: </strong>{{ticket?.id}} </p>
+          <p><strong>Price: </strong>{{ticket?.price| currency:"USD":true}} </p>
+          <p><strong>Flight Id: </strong>{{ticket?.flightId}} </p>
+        </div>   
+        <a class="button" (click)="gotoTickets()">Go back to list</a>
+    </div>
+

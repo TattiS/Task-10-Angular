@@ -1,0 +1,41 @@
+<h3>
+    Planes
+  </h3>
+  <table>
+    <thead>
+      <tr>
+        <th data-field="name">Id</th>
+        <th data-field="name">Name</th>
+        <th data-field="name">Type</th>
+        <th data-field="name">Release Date</th>
+        <th data-field="name">Operational Life</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let plane of planes">
+        <td>{{ plane?.id }}</td>
+        <td>{{ plane?.name }}</td>
+        <td>
+          <p><strong>Id: </strong>{{ plane?.typeOfPlane?.id }}</p>
+          <p><strong>Model: </strong>{{ plane?.typeOfPlane?.model }}</p>
+          <p><strong>Seats: </strong>{{ plane?.typeOfPlane?.seats }}</p>
+          <p><strong>AirLift: </strong>{{ plane?.typeOfPlane?.airlift }}</p>
+        </td>
+        <td>{{ plane?.releaseDate | date:"MM/dd/yy" }}</td>
+        <td>{{ plane?.operationalLife }}</td>
+        <td>
+          <a  class="button-sm" routerLink="/planes/details/{{plane?.id}}" routerLinkActive="active">Details</a>
+         </td>
+        <td>
+          <a  class="button-sm" routerLink="/planes/{{plane?.id}}" routerLinkActive="active">Update</a>
+        </td>
+        <td>
+          <a  class="button-sm" (click)="deletePlane(plane.id)" >Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a class="button" routerLink="/planes/new">Add pilot</a>

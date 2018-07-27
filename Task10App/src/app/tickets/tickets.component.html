@@ -1,0 +1,32 @@
+<h3>
+    Tickets
+</h3>
+  <table>
+    <thead>
+      <tr>
+        <th data-field="name">Id</th>
+        <th data-field="name">Price</th>
+        <th data-field="name">Flight Id</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ticket of tickets">
+        <td>{{ ticket?.id }}</td>
+        <td>{{ ticket?.price }}</td>
+        <td>{{ ticket?.flightId }}</td>
+        <td>
+          <a class="button-sm" routerLink="/tickets/details/{{ticket?.id}}" routerLinkActive="active">Details</a>
+        </td>
+        <td>
+          <a class="button-sm" routerLink="/tickets/{{ticket?.id}}" routerLinkActive="active">Update</a>
+        </td>
+        <td>
+          <a class="button-sm" (click)="deleteTicket(ticket)">Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a class="button" routerLink="/tickets/new">Add ticket</a>

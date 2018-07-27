@@ -1,0 +1,31 @@
+
+<div class="details">
+  
+      <h2>Flight</h2>
+      <p><strong>Id: </strong>{{flight?.id}} </p>
+      <p><strong>Departure point: </strong>{{flight?.departurePoint}} </p>
+      <p><strong>Departure time: </strong>{{flight?.departureTime| date:"MM/dd/yy" }} {{flight?.departureTime| date:"shortTime" }} </p>
+      <p><strong>Arrival time: </strong>{{flight?.arrivalTime| date:"MM/dd/yy" }} {{flight?.arrivalTime| date:"shortTime" }}</p>
+      <p><strong>Destination: </strong>{{flight?.destination}} </p>
+      <h5>Tickets:</h5>
+      <table>
+        <thead>
+          <tr>
+            <th data-field="name">Id</th>
+            <th data-field="name">Price</th>
+            <th data-field="name">Flight Id</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ticket of flight.tickets">
+            <td>{{ ticket?.id }}</td>
+            <td>{{ ticket?.price }}</td>
+            <td>{{ ticket?.flightId }}</td>
+          </tr>
+        </tbody>
+      </table>
+      
+   
+  <a class="button" (click)="gotoFlights()">Go back to list</a>
+</div>

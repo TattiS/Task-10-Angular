@@ -1,0 +1,17 @@
+<div class="details">
+        <div>
+                <h2>Plane</h2>
+                <p><strong>Id: </strong>{{plane?.id}} </p>
+                <p><strong>Name: </strong>{{plane?.name}} </p>
+                <p><strong>Release Date: </strong>{{plane?.releaseDate| date:"MM/dd/yy" }} </p>
+                <p><strong>Operational Life: </strong>{{plane?.operationalLife}} </p>
+                <h5>Type of plane:</h5>
+                <p><strong>Id: </strong>{{ plane?.typeOfPlane?.id }}</p>
+                <p><strong>Model: </strong>{{ plane?.typeOfPlane?.model }}</p>
+                <p><strong>Seats: </strong>{{ plane?.typeOfPlane?.seats }}</p>
+                <p><strong>AirLift: </strong>{{ plane?.typeOfPlane?.airlift }}</p>
+                
+                
+            </div>   
+            <a class="button" (click)="gotoPlanes()">Go back to list</a>
+</div>

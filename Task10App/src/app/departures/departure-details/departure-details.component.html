@@ -1,0 +1,30 @@
+<div class="details">
+  
+  <h2>Departure</h2>
+  <p><strong>Id: </strong>{{departure?.id}} </p>
+  <p><strong>Flight Id: </strong>{{departure?.flightId}} </p>
+  <p><strong>Departure date: </strong>{{departure?.departureDate| date:"MM/dd/yy" }} </p>
+  <h3>Plane: </h3>
+    <p><strong>Id: </strong>{{departure?.planeItem?.id}} </p>
+    <p><strong>Name: </strong>{{departure?.planeItem?.name}} </p>
+    <p><strong>Release Date: </strong>{{departure?.planeItem?.releaseDate| date:"MM/dd/yy" }} </p>
+    <p><strong>Operational Life: </strong>{{departure?.planeItem?.operationalLife}} </p>
+    <h5>Type of plane:</h5>
+    <p><strong>Id: </strong>{{ departure?.planeItem?.typeOfPlane?.id }}</p>
+    <p><strong>Model: </strong>{{ departure?.planeItem?.typeOfPlane?.model }}</p>
+    <p><strong>Seats: </strong>{{ departure?.planeItem?.typeOfPlane?.seats }}</p>
+    <p><strong>AirLift: </strong>{{ departure?.planeItem?.typeOfPlane?.airlift }}</p>
+  <h3>Crew:</h3>
+    <p><strong>Id: </strong>{{departure?.crewItem?.id}} </p>
+    <p><strong>Pilot Id: </strong>{{departure?.crewItem?.pilotId}} </p>
+    <p><strong>Stewardesses: </strong></p>
+    <dl *ngFor="let stewardess of departure?.crewItem?.stewardesses">
+        <dt><p><strong>Id: {{stewardess?.id}}  {{stewardess?.name}} {{stewardess?.surname}}</strong></p></dt>
+        <dd><p><strong> </strong></p></dd>
+        <dd><p><strong>Birhtdate: </strong>{{stewardess?.birthdate| date:"MM/dd/yy" }} </p></dd>
+        <dd><p><strong>Crew Id: </strong>{{stewardess?.crewId}} </p></dd>
+    </dl>
+    
+
+<a class="button" (click)="gotoDepartures()">Go back to list</a>
+</div>

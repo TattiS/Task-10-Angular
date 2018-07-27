@@ -1,0 +1,86 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+  overflow-y: scroll;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #919191;
+  background-color: #232323;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+}
+
+form, fieldset, legend {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+legend {
+  display: none;
+}
+
+input, textarea, select {
+  font-size: 12px;
+  font-family: Georgia,"Times New Roman",Times,serif;
+}
+#container {
+  padding: 30px 0;
+}
+
+  #container section {
+    display: block;
+    width: 100%;
+    margin: 0 0 50px 0;
+    padding: 0;
+  }
+
+  #container .last {
+    margin: 0;
+  }
+
+  #container .more {
+    text-align: right;
+  }
+
+
+.clear:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+}
+
+.clear {
+  display: block;
+  clear: both;
+}
+
+
+* html .clear {
+  height: 1%;
+}
+th{
+  text-align: center;
+}
+th, td {
+  padding-left: 1em;
+}
+label{
+  display: block;
+}
+input {
+  margin-left: 0.5em;
+}
+button{
+  margin-top: 1em;
+}

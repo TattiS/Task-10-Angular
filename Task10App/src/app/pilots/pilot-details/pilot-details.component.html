@@ -1,0 +1,10 @@
+<div class="details">
+    <div>
+        <h2>Pilot: {{pilot?.name}} {{pilot?.surname}}</h2>
+        <p><strong>Id: </strong>{{pilot?.id}}</p>
+        <p><strong>Birhtdate: </strong>{{pilot?.birthdate| date:"MM/dd/yy" }} </p>
+        <p><strong>Experience: </strong>{{pilot?.experience}} </p>
+        
+    </div>   
+    <a class="button" (click)="gotoPilots()">Go back to list</a>
+</div>
