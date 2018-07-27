@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -18,11 +18,11 @@ getStewardess(id) {
 }
 
 addStewardess(stewardess) {
-  return this.http.post(this.url, JSON.stringify(stewardess));
+  return this.http.post(this.url, JSON.stringify(stewardess),httpOptions);
 }
 
 updateStewardess(stewardess) {
-  return this.http.put(this.getUrlWithId(stewardess.id), JSON.stringify(stewardess));
+  return this.http.put(this.getUrlWithId(stewardess.id), JSON.stringify(stewardess),httpOptions);
 }
 
 deleteStewardess(id) {
@@ -33,3 +33,8 @@ private getUrlWithId(id:number) {
   return this.url + "/" + id;
 }
 }
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json'
+  })
+};

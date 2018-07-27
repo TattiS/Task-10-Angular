@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Pilot } from "./pilot";
@@ -21,11 +21,11 @@ export class PilotsService {
   }
 
   addPilot(pilot) {
-    return this.http.post(this.url, JSON.stringify(pilot));
+    return this.http.post(this.url, JSON.stringify(pilot),httpOptions);
   }
 
   updatePilot(pilot) {
-    return this.http.put(this.getUrlWithId(pilot.id), JSON.stringify(pilot));
+    return this.http.put(this.getUrlWithId(pilot.id), JSON.stringify(pilot),httpOptions);
   }
 
   deletePilot(id) {
@@ -36,3 +36,8 @@ export class PilotsService {
     return this.url + "/" + id;
   }
 }
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json'
+  })
+};

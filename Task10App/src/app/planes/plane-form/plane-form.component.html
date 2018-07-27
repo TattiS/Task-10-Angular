@@ -23,7 +23,7 @@
       
         <label for="releaseDate"
                [class.active]="plane.releaseDate"
-               data-error="ReleaseDate is required">"Release Date</label>
+               data-error="ReleaseDate is required">Release Date</label>
         <input id="releaseDate" type="date" class="validate"
                formControlName="releaseDate"
                [class.invalid]="form.controls['releaseDate'].touched && !form.controls['releaseDate'].valid" />
