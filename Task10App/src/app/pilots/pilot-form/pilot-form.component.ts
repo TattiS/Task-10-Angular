@@ -70,4 +70,7 @@ export class PilotFormComponent implements OnInit {
     result.subscribe(p => this.router.navigate(['pilots']));
   }
 
+  gotoPilots() {
+    this.router.navigate(['/pilots']);
+  }
 }

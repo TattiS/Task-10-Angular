@@ -69,4 +69,8 @@ export class FlightFormComponent implements OnInit {
     }
     result.subscribe(p => this.router.navigate(['planes']));
   }
+
+  gotoFlights() {
+    this.router.navigate(['/flights']);
+  }
 }

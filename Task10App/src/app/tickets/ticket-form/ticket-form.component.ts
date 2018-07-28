@@ -58,4 +58,8 @@ export class TicketFormComponent implements OnInit {
     }
     result.subscribe(p => this.router.navigate(['tickets']));
   }
+
+  gotoTickets(){
+    this.router.navigate(['/tickets']);
+  }
 }

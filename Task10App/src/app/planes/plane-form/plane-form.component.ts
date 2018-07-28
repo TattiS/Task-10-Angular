@@ -14,12 +14,12 @@ export class PlaneFormComponent implements OnInit {
   title: string;
   plane: Plane = new Plane();
   constructor(
-    formBuilder: FormBuilder,
+    private formBuilder: FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
     private planesService: PlanesService
   ) { 
-    this.form = formBuilder.group({
+    this.form =this.formBuilder.group({
       id:[' ', [Validators.required, Validators.min(1)]],
       name: [' ', [Validators.required, Validators.maxLength(50)]],
       releaseDate: [' ', [Validators.required, Validators.maxLength(50)]],
@@ -66,5 +66,10 @@ export class PlaneFormComponent implements OnInit {
       result = this.planesService.addPlane(planeValue);
     }
     result.subscribe(p => this.router.navigate(['planes']));
+  }
+
+  
+  gotoPlanes() {
+    this.router.navigate(['/planes']);
   }
 }
