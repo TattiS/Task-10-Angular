@@ -63,4 +63,7 @@ export class StewardessFormComponent implements OnInit {
     result.subscribe(p => this.router.navigate(['stewardess']));
   }
 
+  gotoStewardesses() {
+    this.router.navigate(['/stewardesses']);
+  }
 }

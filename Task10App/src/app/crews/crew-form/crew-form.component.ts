@@ -64,4 +64,7 @@ export class CrewFormComponent implements OnInit {
     }
     result.subscribe(p => this.router.navigate(['crews']));
   }
+  gotoCrews() {
+    this.router.navigate(['/crews']);
+  }
 }

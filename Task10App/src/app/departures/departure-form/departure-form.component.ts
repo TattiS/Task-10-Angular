@@ -72,4 +72,8 @@ export class DepartureFormComponent implements OnInit {
     }
     result.subscribe(p => this.router.navigate(['departures']));
   }
+
+  gotoDepartures() {
+    this.router.navigate(['/departures']);
+  }
 }

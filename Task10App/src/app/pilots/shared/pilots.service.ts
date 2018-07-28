@@ -12,7 +12,7 @@ export class PilotsService {
   constructor(private http: HttpClient) { }
 
   getPilots() {
-      return this.http.get(this.url);
+      return this.http.get<Pilot[]>(this.url);
 
   }
 

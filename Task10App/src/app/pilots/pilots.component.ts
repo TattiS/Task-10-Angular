@@ -16,11 +16,12 @@ export class PilotsComponent implements OnInit {
  constructor(private pilotsService: PilotsService) { }
 
   ngOnInit() {
-    this.pilotsService.getPilots().subscribe((data:Pilot[]) =>{ this.pilots = data});
+    this.pilotsService.getPilots().subscribe((data) =>{ this.pilots = data});
     
   }
  
   deletePilot(pilot) {
+    
     if (confirm("Are you sure you want to delete pilot with id "+ pilot.id + "?")) {
      
       this.pilotsService.deletePilot(pilot.id)

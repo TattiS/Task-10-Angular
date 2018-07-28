@@ -60,4 +60,8 @@ type:PlaneType = new PlaneType();
     }
     result.subscribe(p => this.router.navigate(['types']));
   }
+
+  gotoTypes(){
+    this.router.navigate(['/types']);
+  }
 }
